@@ -1,11 +1,12 @@
 import java.util.Random;
-import  java.util.Scanner;
+
 /**
  * Program runs a game with user where they try to guess a code
  * and the game returns how many correct numbers guessed and
  * how many are in the correct spot
  * @author Brandon N. Wroblewski
  */
+
 public class GuessingGame {
     /**
      * starts program
@@ -16,8 +17,9 @@ public class GuessingGame {
     }
 
     /** 
-     * This method creates and returns an integer array of the given length.
-     * The rand instance is used to generate digits between 0 and 9
+     * method generates a secret code
+     * @param rand instance is used to generate digits between 0 and 9
+     * @param length stores given length 
      * Throws an IllegalArgumentException with the message, "Null rand",
      * if rand is null
      * Throws an IllegalArgumentException with the message, "Invalid length",
@@ -29,8 +31,10 @@ public class GuessingGame {
                              
     }
 
-    /**Returns the number of digits in the guess array that are also in
-    * the code array.
+    /**
+    * method tells user how many correct digits they guessed
+    * @param code stores the secret code
+    * @param guess stores the users guess of the code
     * Throws an IllegalArgumentException with the message, "Null code",
     * if code is null.
     * Throws an IllegalArgumentException with the message, "Null guess",
@@ -48,8 +52,9 @@ public class GuessingGame {
     }
 
     /** 
-    * Returns the number of digits in the guess array that are in the same 
-    * position in the code array. 
+    * method tells user how many of their digits are in correct place
+    * @param code stores the secret code
+    * @param guess stores the users guess of the code
     * Throws an IllegalArgumentException with the message, "Null code",
     * if code is null.
     * Throws an IllegalArgumentException with the message, "Null guess",

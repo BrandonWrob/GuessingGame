@@ -1,0 +1,7 @@
+Git Commit: c3c15d406b44c913763073e05be41e97e6382f66
+Fri Jun 16 14:16:47 EDT 2023
+Contains Academic Integrity Log and Contract
+.gitignore included
+No Checkstyle Errors in src files
+Checkstyle Errors in test files
+Failing at least one of your Unit & Integration Tests

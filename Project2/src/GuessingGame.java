@@ -65,6 +65,8 @@ public class GuessingGame {
     * @param code stores the secret code
     * @param guess stores the users guess of the code.
     * @return how many digits are correct
+    * @throws IllegalArgumentException with the messge, "Null code"
+    * if code is null
     * @throws IllegalArgumentException with the message, "Null guess",
     * if guess is null.
     * @throws IllegalArgumentException with the message, "Different lengths",
@@ -127,20 +129,56 @@ public class GuessingGame {
     * method tells user how many of their digits are in correct place
     * @param code stores the secret code
     * @param guess stores the users guess of the code
-    * Throws an IllegalArgumentException with the message, "Null code",
-    * if code is null.
-    * Throws an IllegalArgumentException with the message, "Null guess",
-    * if guess is null
-    * Throws an IllegalArgumentException with the message, "Different lengths",
+    * @return number of digits in correct position in array
+    * @throws IllegalArgumentException with the messge, "Null code"
+    * if code is null
+    * @throws IllegalArgumentException with the message, "Null guess",
+    * if guess is null.
+    * @throws IllegalArgumentException with the message, "Different lengths",
     * if the lengths of the code and guess are arrays are different.
-    * Throws an IllegalArgumentException with the message, "Invalid digit",
+    * @throws IllegalArgumentException with the message, "Invalid digit",
     * if the code or guess array contains an integer that is less than 0
     * or greater than 9.
-    * @return number of digits in correct position in array
     */
     public static int getCorrectDigitsInCorrectPlace(int[] code, int[] guess) {
-        return 0;
-
+        final int maxIntValue = 9;
+        final int smallestIntValue = 0;
+        //throws illegal argument exception if code or guess
+        //code is null
+        if (code == null) {
+            throw new IllegalArgumentException("Null code");
+        }
+        else if (guess == null) {
+            throw new IllegalArgumentException("Null guess");
+        }
+        //throws illegal argument exception if different lengths
+        if (code.length != guess.length) {
+            throw new IllegalArgumentException("Different lengths");
+        }
+        //throws illegal argument exception if code or guess
+        //have a value less than 0 or greater than 9
+        for (int i = 0; i < code.length; i++) {
+            if (code[i] < smallestIntValue || code[i] > maxIntValue) {
+                throw new IllegalArgumentException("Invalid digit");
+            }
+        }
+        for (int n = 0; n < guess.length; n++) {
+            if (guess[n] < smallestIntValue || guess[n] > maxIntValue) {
+                throw new IllegalArgumentException("Invalid digit");
+            }
+        }
+        //creates variable to count number of digits in correct spot
+        int count = 0;
+        //uses for loop to traverse through guess array characters
+        //checks code and guess array at each index to see if they
+        //are equal, if they are it adds one to count
+        for (int g = 0; g < guess.length; g++) {
+            if (code[g] == guess[g]) {
+                count ++;
+            }
+        }
+        //returns count value
+        return count;
     }
 
 }

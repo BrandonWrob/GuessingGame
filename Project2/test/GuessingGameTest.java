@@ -166,7 +166,11 @@ public class GuessingGameTest {
         int[] guess = {2, 2, 5, 7};
     }
         
-    
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where 2 digits in guess are in correct place
+     * out of 4 digits
+     */
     @Test
     public void testGetCorrectDigitsInCorrectPlace2CorrectDigits1CorrectPlace() {
         int[] code = {2, 3, 4, 5};
@@ -174,7 +178,11 @@ public class GuessingGameTest {
         assertEquals(1, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
     }
     
-    
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where 3 digits in guess are in correct place
+     * out of 4 digits
+     */
     @Test
     public void testGetCorrectDigitsInCorrectPlace3CorrectDigits3CorrectPlace() {
         int[] code = {2, 3, 4, 5};
@@ -182,7 +190,11 @@ public class GuessingGameTest {
         assertEquals(3, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
     }
         
-    
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where 1 digit in guess is in correct place out
+     * of 2 digits
+     */
     @Test
     public void testGetCorrectDigitsInCorrectPlace1CorrectLength2() {
         int[] code = {0, 9};
@@ -190,22 +202,64 @@ public class GuessingGameTest {
         assertEquals(1, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
     }    
 
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where 4 digits in guess are in correct place
+     * out of 6 digits
+     */
     @Test
     public void testGetCorrectDigitsInCorrectPlace4CorrectLength6() {
         int[] code = {2, 3, 4, 5, 6, 0};
         int[] guess = {2, 3, 4, 9, 5, 0};
         assertEquals(4, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
     }
-    
-    
-    //TODO:  
-    // Create 4 more test methods for getCorrectDigitsInCorrectPlace to test the following:
-    //    1.  All digits in correct place
-    //    2.  All digits correct but no digits in correct place
-    //    3.  Code digits all the same, 2 guess digits in correct place
-    //    4.  Guess digits all the same, 3 in correct place
-             
 
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where all digits are in the correct place
+     */
+    @Test
+    public void testGetCorrectDigitsInCorrectPlaceAllCorrectLength6() {
+        int[] code = {2, 3, 4, 5, 6, 0};
+        int[] guess = {2, 3, 4, 5, 6, 0};
+        assertEquals(6, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
+    }
+
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where no digits are in the correct place, but
+     * they both have same digits
+     */
+    @Test
+    public void testGetCorrectDigitsInCorrectPlaceNoneCorrectPlaceLength6() {
+        int[] code = {2, 3, 4, 5, 6, 0};
+        int[] guess = {3, 2, 5, 4, 0, 6};
+        assertEquals(0, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
+    }
+    
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where two digits are in the correct place, and 
+     * guess has all the correct digits
+     */
+    @Test
+    public void testGetCorrectDigitsInCorrectPlaceTwoCorrectPlaceLength6() {
+        int[] code = {2, 3, 4, 5, 6, 0};
+        int[] guess = {2, 3, 5, 4, 0, 6};
+        assertEquals(2, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
+    }
+
+    /**
+     * tests the getCorrectDigitsInCorrectPlace method
+     * where three digits are in the correct place, and
+     * they both have same digits
+     */
+    @Test
+    public void testGetCorrectDigitsInCorrectPlaceThreeCorrectPlaceLength6() {
+        int[] code = {2, 3, 4, 5, 6, 0};
+        int[] guess = {2, 3, 4, 0, 5, 6};
+        assertEquals(3, GuessingGame.getCorrectDigitsInCorrectPlace(code, guess));
+    }
 
     /**
      * Test the GuessingGame methods with invalid values

@@ -1,13 +1,14 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import java.beans.Transient;
 import java.util.*;
 
 /**
  * Program to test GuessingGame methods
  * @author Suzanne Balik
  * @author Michelle Glatz 
- * @author 
+ * @author Brandon N. Wroblewski
  */
 public class GuessingGameTest {
 
@@ -39,13 +40,21 @@ public class GuessingGameTest {
                           "GuessingGame.getSecretCode(rand, 2)");
     }      
     
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * one correct digit (out of 4)
+     */
     @Test
     public void testGetCorrectDigits1Correct() {
         int[] code = {2, 3, 4, 5};
         int[] guess = {7, 4, 9, 8};
         assertEquals(1, GuessingGame.getCorrectDigits(code, guess));
     }
-       
+    
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * two correct digits (out of 4)
+     */
     @Test
     public void testGetCorrectDigits2Correct() {
         int[] code = {2, 3, 4, 5};
@@ -53,6 +62,10 @@ public class GuessingGameTest {
         assertEquals(2, GuessingGame.getCorrectDigits(code, guess));
     } 
 
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * three correct digits (out of 4)
+     */
     @Test
     public void testGetCorrectDigits3Correct() {
         int[] code = {2, 3, 4, 5};
@@ -60,6 +73,10 @@ public class GuessingGameTest {
         assertEquals(3, GuessingGame.getCorrectDigits(code, guess));
     }    
   
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * one correct digit (out of 2)
+     */
     @Test
     public void testGetCorrectDigits1CorrectLength2() {
         int[] code = {2, 3};
@@ -67,6 +84,10 @@ public class GuessingGameTest {
         assertEquals(1, GuessingGame.getCorrectDigits(code, guess));
     }
     
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * four correct digits (out of 8)
+     */
     @Test
     public void testGetCorrectDigits4CorrectLength8() {
         int[] code = {1, 2, 6, 9, 0, 5, 8, 4};
@@ -74,19 +95,76 @@ public class GuessingGameTest {
         assertEquals(4, GuessingGame.getCorrectDigits(code, guess));
     } 
 
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * three out of four correct digits while having 2 duplicate
+     * values in code, 3 in guess of same value
+     * (should only count duplicate twice)
+     */
     @Test
     public void testGetCorrectDigits3CorrectDuplicatesInGuessAndCode() {
         int[] code = {1, 1, 2, 3};
         int[] guess = {2, 1, 1, 1};
         assertEquals(3, GuessingGame.getCorrectDigits(code, guess));
-    }      
+    }
+    
+    /**
+     * checks the getCorrectDigits method where user guesses
+     * two out of four correct digits while having 2 duplicate
+     * values corresponding to 3 duplicate values in code
+     * (should only count two of them)
+     */
+    @Test 
+    public void testGetCorrectDigits2Correct2DuplicatesCode3DuplicatesInGuess() {
+        int[] code = {4, 1, 1, 1};
+        int[] guess = {1, 1, 2, 3};
+        assertEquals(2, GuessingGame.getCorrectDigits(code, guess));
+    }
 
-    //TODO:  
-    // Create 4 more test methods for getCorrectDigits to test the following:
-    //    1.  All digits correct
-    //    2.  No digits correct
-    //    3.  Guess has duplicate digits that match a code digit, code does not have duplicates
-    //    4.  Code has duplicate digits and guess has only one of the duplicate code digits
+    /**
+     * checks the getCorrectDigit method where user
+     * guesses all digits being correct
+     */
+    @Test 
+    public void testGetCorrectDigitsAllCorrectGuesses() {
+        int[] code = {4, 3, 3, 2};
+        int[] guess = {2, 3, 4, 3};
+        assertEquals(4, GuessingGame.getCorrectDigits(code, guess));
+    }
+
+    /**
+     * checks the getCorrectDigit method where user
+     * guesses none of the correct digits in code
+     */
+    @Test 
+    public void testGetCorrectDigitsNoCorrectGuesses() {
+        int[] code = {2, 3, 2, 3};
+        int[] guess = {9, 4, 6, 5};
+        assertEquals(0, GuessingGame.getCorrectDigits(code, guess));
+    }
+
+    /**
+     * checks the getCorrectDigit method where users
+     * guess has duplicate digits that match a code
+     * digit, but code only has one of the digit
+     */
+    @Test 
+    public void testGetCorrectDigitsDuplicateGuessSingularCode() {
+        int[] code = {1, 2, 3, 4};
+        int[] guess = {5, 5, 4, 4};
+        assertEquals(1, GuessingGame.getCorrectDigits(code, guess));
+    }
+
+    /**
+     * checks the getCorrectDigits method where user
+     * guess has a singular digit that matches a digit
+     * in code which is a duplicate
+     */
+    @Test 
+    public void testGetCorrectDigitsSingularGuessDuplicateCodeValue() {
+        int[] code = {1, 1, 2, 3};
+        int[] guess = {2, 2, 5, 7};
+    }
         
     
     @Test

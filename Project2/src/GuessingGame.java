@@ -150,8 +150,8 @@ public class GuessingGame {
             returnArray[loop][SECONDINT] = second;
             returnArray[loop][THIRDINT] = third;
             returnArray[loop][FOURTHINT] = fourth;
-            returnArray[loop][SEPERATOR] = "|";
-            returnArray[loop][CORRECTVALUES] = valuesC;
+            returnArray[loop][SEPERATOR] = "| ";
+            returnArray[loop][CORRECTVALUES] = valuesC + " ";
             returnArray[loop][CORRECTPLACES] = placeC;
             loop++;
 

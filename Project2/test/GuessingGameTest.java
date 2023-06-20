@@ -1,7 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
-import java.beans.Transient;
 import java.util.*;
 
 /**
@@ -12,6 +10,10 @@ import java.util.*;
  */
 public class GuessingGameTest {
 
+    /**
+     * tests getSecretCode method with a seed of
+     * 1 and a length of 4
+     */
     @Test
     public void testGetSecretCodeSeed1Length4() {
         int[] expected = {5, 8, 7, 3};
@@ -21,6 +23,10 @@ public class GuessingGameTest {
                           "GuessingGame.getSecretCode(rand, 4)");
     }
     
+    /**
+     * tests getSecretCode method with a seed of
+     * 1 and a length of 10
+     */
     @Test
     public void testGetSecretCodeSeed1Length10() {
         int[] expected = {5, 8, 7, 3, 4, 4, 4, 6, 8, 8};
@@ -30,7 +36,10 @@ public class GuessingGameTest {
                           "GuessingGame.getSecretCode(rand, 10)");
     } 
 
-    
+    /**
+     * tests getSecretCode method with a seed of
+     * 2 and a length of 2
+     */
     @Test
     public void testGetSecretCodeSeed2Length2() {
         int[] expected = {8, 2};

@@ -1,14 +1,11 @@
 # Project 2 Academic Integrity Log and Contract
 
-Name: [ENTER NAME (First & Last) HERE]
+Name: [Brandon Wroblewski]
 
 ## Log (to be completed as you work on the project)
 
-* [ENTER EACH INTERACTION WITH TEACHING STAFF ABOUT PROJECT.] 
+* Used given code from website from project instructions for using seeds in my random number generator 6/18
 
-For example, 
-
-* 1/24 Attended Mr. Sthapit's office hours to get clarification about calculateDistance() method parameters and return type in part 2 of project
 
 ## Contract (to be completed after you have completed the project)
 
@@ -16,7 +13,7 @@ Select all of the following that apply for Project 2: (To select, change [ ] to 
 
 [ ] I received help from an instructor of the course.
 [ ] I received help from a teaching assistant of the course.
-[ ] I used code provided on the course website.
+[X ] I used code provided on the course website. (listed in log)
 [ ] I used code from the textbook or textbook website.
 [ ] I used code from other programs I wrote this semester.
 [ ] I used code from other programs I wrote prior to this semester.

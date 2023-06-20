@@ -1,7 +1,13 @@
-Git Commit: 041a6322bedeeb26870976fe2e6672ab69680324
-Fri Jun 16 22:54:23 EDT 2023
+Git Commit: 8e4d7999bab9a4bab30030faffce7630ba8fad51
+Tue Jun 20 01:48:11 EDT 2023
 Contains Academic Integrity Log and Contract
 .gitignore included
 No Checkstyle Errors in src files
-Checkstyle Errors in test files
-Failing at least one of your Unit & Integration Tests
+No Checkstyle Errors in test files
+Passing all of your Unit & Integration Tests
+
+Coverage for your Unit & Integration Tests
+GuessingGame
+213:getSecretCode() -> branch: 6/6; line: 8/8
+251:getCorrectDigits() -> branch: 24/26; line: 26/26
+323:getCorrectDigitsInCorrectPlace() -> branch: 20/22; line: 19/19

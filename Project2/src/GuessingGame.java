@@ -15,6 +15,12 @@ public class GuessingGame {
     /**
      * starts program
      * @param args command line argument
+     * method creates a random number generate
+     * method calls upon the getSecretCode method, the
+     * getCorrectDigit method, and the getCorrectDigitsInCorrectPlace
+     * method to display information of correct digits, places of users
+     * guess, and display if they win (and how many guesses it took), or
+     * if they lost (and reveal the secret code).
      */
     public static void main(String[] args) {
    

@@ -1,5 +1,5 @@
-Git Commit: f6616d8dbf01c324a42af6e729460b9397473483
-Tue Jun 20 12:58:39 EDT 2023
+Git Commit: acb5ec439cfc03a125ca3fd17b417dd771cf0589
+Tue Jun 20 13:13:04 EDT 2023
 Contains Academic Integrity Log and Contract
 .gitignore included
 No Checkstyle Errors in src files
@@ -8,6 +8,6 @@ Passing all of your Unit & Integration Tests
 
 Coverage for your Unit & Integration Tests
 GuessingGame
-213:getSecretCode() -> branch: 6/6; line: 8/8
-251:getCorrectDigits() -> branch: 24/26; line: 26/26
-323:getCorrectDigitsInCorrectPlace() -> branch: 20/22; line: 19/19
+219:getSecretCode() -> branch: 6/6; line: 8/8
+257:getCorrectDigits() -> branch: 24/26; line: 26/26
+329:getCorrectDigitsInCorrectPlace() -> branch: 20/22; line: 19/19
